@@ -133,7 +133,7 @@ const Hero = () => {
           <div className="pre-title">AI-Powered Legal Technology</div>
           <h1 className="hero-title">
             <span className="title-line">Transform Your Practice with</span>
-            <span className="title-accent">LawMaster AI</span>
+            <span className="title-accent">Chiksha</span>
           </h1>
           <p className="hero-subtitle">
             Advanced artificial intelligence designed specifically for legal professionals. 
