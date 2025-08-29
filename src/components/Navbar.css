@@ -1,0 +1,366 @@
+/* LawMaster Navbar Styles */
+:root {
+  --primary-color: #2c5530;
+  --primary-dark: #1e3a24;
+  --secondary-color: #6b9080;
+  --accent-color: #a4c3b2;
+  --light-bg: #f6fff8;
+  --light-text: #2b2d42;
+  --light-border: #cce3de;
+  --light-shadow: rgba(43, 45, 66, 0.1);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --radius: 8px;
+}
+
+/* Navbar Base Styles */
+.lawmaster-navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  background: var(--light-bg);
+  color: var(--light-text);
+  box-shadow: var(--shadow);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: var(--transition);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--light-border);
+}
+
+.lawmaster-navbar-scrolled {
+  padding: 0.7rem 0;
+  background: var(--light-bg);
+  box-shadow: 0 4px 20px var(--light-shadow);
+}
+
+.lawmaster-navbar-container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.lawmaster-navbar-logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  z-index: 1001;
+}
+
+.lawmaster-navbar-logo a {
+  text-decoration: none;
+  color: var(--light-text);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: var(--transition);
+}
+
+.lawmaster-navbar-logo a:hover {
+  transform: translateY(-2px);
+}
+
+.lawmaster-logo-icon {
+  font-size: 1.8rem;
+}
+
+.lawmaster-logo-text {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.lawmaster-navbar-links ul {
+  display: flex;
+  list-style: none;
+  gap: 1.8rem;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.lawmaster-navbar-links li a {
+  text-decoration: none;
+  color: var(--light-text);
+  font-weight: 500;
+  transition: var(--transition);
+  position: relative;
+  padding: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.lawmaster-navbar-links li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.lawmaster-navbar-links li a:hover::after {
+  width: 100%;
+}
+
+.lawmaster-navbar-links li a:hover {
+  color: var(--primary-color);
+}
+
+/* Search Box Styles */
+.lawmaster-nav-search {
+  margin: 0 1rem;
+}
+
+.lawmaster-search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.lawmaster-search-box input {
+  padding: 0.6rem 1rem 0.6rem 2.5rem;
+  border: 1px solid var(--light-border);
+  border-radius: 50px;
+  font-size: 0.9rem;
+  width: 220px;
+  transition: var(--transition);
+  background: var(--light-bg);
+  color: var(--light-text);
+}
+
+.lawmaster-search-box input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(44, 85, 48, 0.1);
+}
+
+.lawmaster-search-box input::placeholder {
+  color: var(--light-text);
+  opacity: 0.7;
+}
+
+.lawmaster-search-box button {
+  position: absolute;
+  left: 10px;
+  background: transparent;
+  border: none;
+  color: var(--light-text);
+  opacity: 0.7;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.lawmaster-search-box button:hover {
+  opacity: 1;
+}
+
+.lawmaster-search-box input:focus + button {
+  color: var(--primary-color);
+  opacity: 1;
+}
+
+/* Button Styles */
+.lawmaster-btn {
+  padding: 0.7rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lawmaster-btn-primary {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  color: white;
+  box-shadow: 0 4px 6px rgba(44, 85, 48, 0.2);
+}
+
+.lawmaster-btn-primary:hover {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(44, 85, 48, 0.25);
+}
+
+/* Mobile Toggle Button */
+.lawmaster-navbar-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0.5rem;
+  z-index: 1001;
+}
+
+.lawmaster-navbar-toggle span {
+  width: 25px;
+  height: 2px;
+  background: var(--light-text);
+  margin: 3px 0;
+  transition: 0.4s;
+  border-radius: 2px;
+}
+
+.lawmaster-navbar-toggle.active span:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+  background: var(--primary-color);
+}
+
+.lawmaster-navbar-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.lawmaster-navbar-toggle.active span:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+  background: var(--primary-color);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 968px) {
+  .lawmaster-nav-search {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .lawmaster-navbar-container {
+    padding: 0 1.5rem;
+  }
+  
+  .lawmaster-navbar-toggle {
+    display: flex;
+  }
+  
+  .lawmaster-navbar-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--light-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    clip-path: circle(0px at calc(100% - 65px) 40px);
+    transition: clip-path 0.6s ease-in-out;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  
+  .lawmaster-navbar-links.active {
+    clip-path: circle(1500px at calc(100% - 65px) 40px);
+  }
+  
+  .lawmaster-navbar-links ul {
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    padding: 2rem;
+  }
+  
+  .lawmaster-navbar-links li {
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .lawmaster-navbar-links.active li {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .lawmaster-navbar-links.active li:nth-child(1) { transition-delay: 0.1s; }
+  .lawmaster-navbar-links.active li:nth-child(2) { transition-delay: 0.2s; }
+  .lawmaster-navbar-links.active li:nth-child(3) { transition-delay: 0.3s; }
+  .lawmaster-navbar-links.active li:nth-child(4) { transition-delay: 0.4s; }
+  .lawmaster-navbar-links.active li:nth-child(5) { transition-delay: 0.5s; }
+  .lawmaster-navbar-links.active li:nth-child(6) { transition-delay: 0.6s; }
+  .lawmaster-navbar-links.active li:nth-child(7) { transition-delay: 0.7s; }
+  .lawmaster-navbar-links.active li:nth-child(8) { transition-delay: 0.8s; }
+  
+  .lawmaster-navbar-links li a {
+    font-size: 1.3rem;
+    padding: 1rem;
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid var(--light-border);
+  }
+  
+  .lawmaster-navbar-links .lawmaster-btn {
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    width: 80%;
+  }
+  
+  /* Show search in mobile menu */
+  .lawmaster-nav-search {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+  }
+  
+  .lawmaster-search-box {
+    width: 100%;
+  }
+  
+  .lawmaster-search-box input {
+    width: 100%;
+    padding: 0.8rem 1rem 0.8rem 3rem;
+  }
+  
+  .lawmaster-search-box button {
+    left: 20px;
+  }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .lawmaster-navbar,
+  .lawmaster-navbar-links li a,
+  .lawmaster-btn,
+  .lawmaster-search-box input {
+    transition: none;
+  }
+  
+  .lawmaster-navbar-links {
+    transition: clip-path 0.8s ease-in-out;
+  }
+  
+  .lawmaster-navbar-links li {
+    transition: none;
+  }
+}
+
+/* Add padding to the top of the first content section to prevent navbar overlap */
+main, .hero-section {
+  padding-top: 80px;
+}
+
+@media (max-width: 768px) {
+  main, .hero-section {
+    padding-top: 70px;
+  }
+}
