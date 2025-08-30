@@ -133,7 +133,7 @@ const Hero = () => {
           <div className="pre-title">AI-Powered Legal Technology</div>
           <h1 className="hero-title">
             <span className="title-line">Transform Your Practice with</span>
-            <span className="title-accent">Chiksha</span>
+            <span className="title-accent">Chakshi</span>
           </h1>
           <p className="hero-subtitle">
             Advanced artificial intelligence designed specifically for legal professionals. 
@@ -209,6 +209,7 @@ const Hero = () => {
               </div>
             </div>
             
+            {/* Floating cards with higher z-index to appear in front */}
             <div className="floating-card card-1">
               <i className="fas fa-chart-line"></i>
               <div className="floating-card-text">
@@ -235,8 +236,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      
-     
       
       <div className="scroll-indicator">
         <div className="scroll-arrow">

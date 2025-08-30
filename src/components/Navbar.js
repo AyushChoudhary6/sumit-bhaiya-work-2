@@ -62,8 +62,12 @@ const Navbar = () => {
         <div className="lawmaster-navbar-container">
           <div className="lawmaster-navbar-logo">
             <a href="#home" onClick={handleLinkClick}>
-              <span className="lawmaster-logo-icon">⚖️</span>
-              <span className="lawmaster-logo-text">LawMaster</span>
+              {/* Replace with your actual logo image path */}
+              <img 
+                src="/logo.png" 
+                alt="Company Logo" 
+                className="navbar-logo-image"
+              />
             </a>
           </div>
           
