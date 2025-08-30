@@ -2,14 +2,12 @@ import React, { useEffect, useState, useRef } from 'react';
 import './Hero.css';
 
 const Hero = () => {
-  const [counted, setCounted] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const heroRef = useRef(null);
   const canvasRef = useRef(null);
 
   useEffect(() => {
     // Trigger animations when component mounts
-    setCounted(true);
     setIsVisible(true);
     
     // Initialize particle animation
@@ -76,42 +74,23 @@ const Hero = () => {
     
     initParticles();
     
-    // Animate stats counting
-    const animateCounters = () => {
-      const counters = document.querySelectorAll('.stat-number');
-      const speed = 2000; // Lower number = faster animation
-      
-      counters.forEach(counter => {
-        const target = +counter.getAttribute('data-target');
-        const count = +counter.innerText;
-        const increment = target / speed;
-        
-        if (count < target) {
-          counter.innerText = Math.ceil(count + increment);
-          setTimeout(() => animateCounters(), 1);
-        } else {
-          counter.innerText = target.toLocaleString();
-        }
-      });
-    };
-    
     // Intersection Observer for scroll animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          animateCounters();
-          observer.unobserve(entry.target);
+          entry.target.classList.add('animate');
         }
       });
-    }, { threshold: 0.5 });
-    
-    if (heroRef.current) {
-      observer.observe(heroRef.current);
+    });
+
+    const currentHeroRef = heroRef.current;
+    if (currentHeroRef) {
+      observer.observe(currentHeroRef);
     }
 
     return () => {
-      if (heroRef.current) {
-        observer.unobserve(heroRef.current);
+      if (currentHeroRef) {
+        observer.unobserve(currentHeroRef);
       }
     };
   }, []);

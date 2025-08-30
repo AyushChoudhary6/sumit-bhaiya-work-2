@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import "./Stats.css";
 
 const Stats = () => {
@@ -7,12 +7,12 @@ const Stats = () => {
   const statsRef = useRef(null);
   const animationRefs = useRef([]);
   
-  const statsData = [
+  const statsData = useMemo(() => [
     { number: 10000, label: "Legal Documents Processed", prefix: "", suffix: "+", icon: "📄" },
     { number: 98, label: "Accuracy Rate", prefix: "", suffix: "%", icon: "🎯" },
     { number: 500, label: "Law Firms Using", prefix: "", suffix: "+", icon: "⚖️" },
     { number: 24, label: "Hours Saved Weekly", prefix: "~", suffix: "", icon: "⏱️" }
-  ];
+  ], []);
 
   // Animation function using requestAnimationFrame for smoother performance
   const animateValue = useCallback((element, start, end, duration, suffix = "", prefix = "") => {

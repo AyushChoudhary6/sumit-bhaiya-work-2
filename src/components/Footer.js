@@ -28,10 +28,10 @@ const Footer = () => {
               comprehensive legal intelligence.
             </p>
             <div className="social-links">
-              <a href="#"><i className="fab fa-facebook-f"></i></a>
-              <a href="#"><i className="fab fa-twitter"></i></a>
-              <a href="#"><i className="fab fa-linkedin-in"></i></a>
-              <a href="#"><i className="fab fa-instagram"></i></a>
+              <button type="button" className="social-link"><i className="fab fa-facebook-f"></i></button>
+              <button type="button" className="social-link"><i className="fab fa-twitter"></i></button>
+              <button type="button" className="social-link"><i className="fab fa-linkedin-in"></i></button>
+              <button type="button" className="social-link"><i className="fab fa-instagram"></i></button>
             </div>
           </div>
 
@@ -39,10 +39,10 @@ const Footer = () => {
           <div className="footer-section">
             <h4 className="footer-title">Quick Links</h4>
             <ul className="footer-links">
-              <li><a href="#">Home</a></li>
+              <li><a href="#home">Home</a></li>
               <li><a href="#features">Features</a></li>
               <li><a href="#pricing">Pricing</a></li>
-              <li><a href="#">Blog</a></li>
+              <li><a href="#blog">Blog</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
@@ -51,11 +51,11 @@ const Footer = () => {
           <div className="footer-section">
             <h4 className="footer-title">Legal Categories</h4>
             <ul className="footer-links">
-              <li><a href="#">Criminal Law</a></li>
-              <li><a href="#">Civil Law</a></li>
-              <li><a href="#">Corporate Law</a></li>
-              <li><a href="#">Property Law</a></li>
-              <li><a href="#">Family Law</a></li>
+              <li><a href="#criminal-law">Criminal Law</a></li>
+              <li><a href="#civil-law">Civil Law</a></li>
+              <li><a href="#corporate-law">Corporate Law</a></li>
+              <li><a href="#property-law">Property Law</a></li>
+              <li><a href="#family-law">Family Law</a></li>
             </ul>
           </div>
 
@@ -86,9 +86,9 @@ const Footer = () => {
           <div className="footer-bottom-content">
             <p>© 2023 LawMaster. All rights reserved.</p>
             <div className="legal-links">
-              <a href="#">Privacy Policy</a>
+              <a href="#privacy-policy">Privacy Policy</a>
               <span>|</span>
-              <a href="#">Terms of Service</a>
+              <a href="#terms-of-service">Terms of Service</a>
             </div>
           </div>
         </div>
