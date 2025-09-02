@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './Navbar.css'; // Import the CSS file
+import { useNavigate } from 'react-router-dom';
+import './Navbar.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const navbarRef = useRef(null);
+  const navigate = useNavigate();
 
   // Handle scroll event to change navbar appearance
   useEffect(() => {
@@ -51,6 +53,18 @@ const Navbar = () => {
     setIsOpen(false);
   };
 
+  // Handle login navigation
+  const handleLogin = () => {
+    handleLinkClick();
+    navigate('/login');
+  };
+
+  // Handle register navigation
+  const handleRegister = () => {
+    handleLinkClick();
+    navigate('/register');
+  };
+
   return (
     <>
       <nav 
@@ -62,7 +76,6 @@ const Navbar = () => {
         <div className="lawmaster-navbar-container">
           <div className="lawmaster-navbar-logo">
             <a href="#home" onClick={handleLinkClick}>
-              {/* Replace with your actual logo image path */}
               <img 
                 src="/logo.png" 
                 alt="Company Logo" 
@@ -89,9 +102,14 @@ const Navbar = () => {
                 </div>
               </li>
               <li>
-                <button className="lawmaster-btn lawmaster-btn-primary" onClick={handleLinkClick}>
-                  Get Started
-                </button>
+                <div className="lawmaster-auth-buttons">
+                  <button className="lawmaster-btn lawmaster-btn-secondary" onClick={handleLogin}>
+                    Log In
+                  </button>
+                  <button className="lawmaster-btn lawmaster-btn-primary" onClick={handleRegister}>
+                    Register Now
+                  </button>
+                </div>
               </li>
             </ul>
           </div>
