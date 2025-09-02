@@ -3,7 +3,6 @@ import './Pricing.css';
 
 const Pricing = () => {
   const [billingCycle, setBillingCycle] = useState('monthly');
-  const [hoveredCard, setHoveredCard] = useState(null);
 
   const toggleBillingCycle = () => {
     setBillingCycle(billingCycle === 'monthly' ? 'yearly' : 'monthly');
@@ -83,8 +82,6 @@ const Pricing = () => {
             <div 
               key={key}
               className={`pricing-card-legal ${plan.popular ? 'pricing-card-popular-legal' : ''}`}
-              onMouseEnter={() => setHoveredCard(key)}
-              onMouseLeave={() => setHoveredCard(null)}
             >
               {plan.popular && <div className="popular-badge-legal">Most Popular</div>}
               
