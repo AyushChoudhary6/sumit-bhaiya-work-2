@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import "./Dashboard.css";
 import { 
   Bell, Search, Briefcase, FileText, Calendar, Home, 
   Users, Settings, Scale, Landmark, Gavel, BookOpen, 
@@ -9,7 +10,7 @@ import {
   Bookmark, HelpCircle, LogOut, User, Star, 
   ArrowUpRight, MoreHorizontal, Eye, Edit, Trash2
 } from 'lucide-react';
-import "./Dashboard.css";
+
 
 const LawMasterDashboard = () => {
   const [activeTab, setActiveTab] = useState('overview');
