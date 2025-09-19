@@ -1,11 +1,11 @@
-/* Hero.css */
+/* Hero.css - Professional Navy Blue & Gold Theme */
 .hero {
   position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
 }
 
 .particles-canvas {
@@ -29,13 +29,13 @@
 .element {
   position: absolute;
   border-radius: 50%;
-  opacity: 0.1;
+  opacity: 0.08;
 }
 
 .element-1 {
   width: 300px;
   height: 300px;
-  background: linear-gradient(45deg, #1a3365, #3b5998);
+  background: linear-gradient(45deg, #0A2342, #1E3A8A);
   top: -150px;
   right: -100px;
 }
@@ -43,7 +43,7 @@
 .element-2 {
   width: 200px;
   height: 200px;
-  background: linear-gradient(45deg, #1a3365, #3b5998);
+  background: linear-gradient(45deg, #0A2342, #1E3A8A);
   bottom: 100px;
   left: -50px;
 }
@@ -51,7 +51,7 @@
 .element-3 {
   width: 150px;
   height: 150px;
-  background: linear-gradient(45deg, #1a3365, #3b5998);
+  background: linear-gradient(45deg, #0A2342, #1E3A8A);
   top: 50%;
   right: 10%;
 }
@@ -59,7 +59,7 @@
 .element-4 {
   width: 100px;
   height: 100px;
-  background: linear-gradient(45deg, #1a3365, #3b5998);
+  background: linear-gradient(45deg, #0A2342, #1E3A8A);
   bottom: 20%;
   right: 20%;
 }
@@ -67,7 +67,7 @@
 .element-5 {
   width: 250px;
   height: 250px;
-  background: linear-gradient(45deg, #1a3365, #3b5998);
+  background: linear-gradient(45deg, #0A2342, #1E3A8A);
   top: 30%;
   left: 10%;
 }
@@ -97,7 +97,7 @@
 .pre-title {
   font-size: 1rem;
   font-weight: 600;
-  color: #1a3365;
+  color: #0A2342;
   margin-bottom: 1rem;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -108,7 +108,7 @@
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 1.5rem;
-  color: #1a3365;
+  color: #0A2342;
 }
 
 .title-line {
@@ -116,7 +116,7 @@
 }
 
 .title-accent {
-  color: #4a90e2;
+  color: #D4AF37;
   position: relative;
   display: inline-block;
 }
@@ -128,14 +128,14 @@
   left: 0;
   width: 100%;
   height: 8px;
-  background: rgba(74, 144, 226, 0.2);
+  background: rgba(212, 175, 55, 0.2);
   z-index: -1;
 }
 
 .hero-subtitle {
   font-size: 1.2rem;
   line-height: 1.6;
-  color: #4a5568;
+  color: #444444;
   margin-bottom: 2.5rem;
   max-width: 500px;
 }
@@ -160,24 +160,24 @@
 }
 
 .cta-button.primary {
-  background: linear-gradient(90deg, #1a3365, #4a90e2);
+  background: linear-gradient(90deg, #0A2342, #1E3A8A);
   color: white;
-  box-shadow: 0 4px 15px rgba(26, 51, 101, 0.3);
+  box-shadow: 0 4px 15px rgba(10, 35, 66, 0.3);
 }
 
 .cta-button.primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(26, 51, 101, 0.4);
+  box-shadow: 0 8px 20px rgba(10, 35, 66, 0.4);
 }
 
 .cta-button.secondary {
   background: transparent;
-  color: #1a3365;
-  border: 2px solid #1a3365;
+  color: #0A2342;
+  border: 2px solid #0A2342;
 }
 
 .cta-button.secondary:hover {
-  background: rgba(26, 51, 101, 0.05);
+  background: rgba(10, 35, 66, 0.05);
 }
 
 .button-hover-effect {
@@ -214,11 +214,11 @@
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: rgba(74, 144, 226, 0.1);
+  background: rgba(212, 175, 55, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #4a90e2;
+  color: #D4AF37;
 }
 
 .hero-visual {
@@ -247,6 +247,7 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   z-index: 4;
+  border: 1px solid #e2e8f0;
 }
 
 .card-header {
@@ -283,7 +284,7 @@
 
 .card-title {
   font-weight: 600;
-  color: #1a3365;
+  color: #0A2342;
 }
 
 .card-content {
@@ -327,15 +328,15 @@
 }
 
 .process-node.active {
-  background: #4a90e2;
-  border-color: #4a90e2;
+  background: #1E3A8A;
+  border-color: #1E3A8A;
   color: white;
 }
 
 .process-text {
   text-align: center;
   font-size: 0.8rem;
-  color: #718096;
+  color: #444444;
 }
 
 .document-preview {
@@ -352,7 +353,7 @@
 }
 
 .document-line.highlighted {
-  background: #4a90e2;
+  background: #1E3A8A;
 }
 
 .document-line:nth-child(1) {
@@ -384,14 +385,15 @@
   background: white;
   border-radius: 10px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  z-index: 10; /* Increased z-index to ensure they appear in front */
+  z-index: 10;
   animation: float 3s ease-in-out infinite;
+  border: 1px solid #e2e8f0;
 }
 
 .floating-card i {
   font-size: 1.5rem;
   margin-right: 0.75rem;
-  color: #4a90e2;
+  color: #1E3A8A;
 }
 
 .floating-card-text {
@@ -401,14 +403,14 @@
 
 .card-value {
   font-weight: 700;
-  color: #1a3365;
+  color: #0A2342;
   font-size: 1.25rem;
   line-height: 1;
 }
 
 .card-label {
   font-size: 0.75rem;
-  color: #718096;
+  color: #444444;
 }
 
 .card-1 {
@@ -446,7 +448,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #718096;
+  color: #444444;
   z-index: 3;
 }
 
@@ -460,7 +462,7 @@
 .scroll-arrow span {
   width: 2px;
   height: 10px;
-  background: #718096;
+  background: #444444;
   margin: 2px 0;
   border-radius: 1px;
   animation: scroll 2s infinite;
