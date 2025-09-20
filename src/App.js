@@ -14,6 +14,7 @@ import Footer from "./components/Footer";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Dashboard from "./components/Dashboard";
+import ProtectedRoute from "./components/ProtectedRoute"; // Import ProtectedRoute
 import "./App.css";
 
 // Home component that contains all your main page content
@@ -43,7 +44,14 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route 
+              path="/dashboard" 
+              element={
+                <ProtectedRoute>
+                  <Dashboard />
+                </ProtectedRoute>
+              } 
+            />
           </Routes>
         </main>
         <Footer />

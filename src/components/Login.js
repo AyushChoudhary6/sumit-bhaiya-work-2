@@ -1,19 +1,42 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { loginUser } from '../lib/api'; // Import the loginUser function
+import { supabase } from '../lib/supabaseClient'; // Import the Supabase client
 import './Auth.css';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState(''); // State for error messages
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add your authentication logic here
-    console.log('Login attempt with:', { email, password });
-    
-    // For demo purposes, redirect to dashboard after login
-    navigate('/dashboard');
+    setError(''); // Clear previous errors
+    try {
+      // 1. Authenticate with Supabase
+      const { data: supabaseAuthData, error: supabaseAuthError } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+
+      if (supabaseAuthError) {
+        throw supabaseAuthError;
+      }
+
+      const supabaseToken = supabaseAuthData.session.access_token;
+
+      // 2. Send Supabase JWT to your backend
+      const backendResponse = await loginUser(supabaseToken);
+      console.log('Backend Login successful:', backendResponse);
+
+      // Store token or user info in localStorage/sessionStorage if needed
+      localStorage.setItem('token', supabaseToken); // Store the Supabase token
+      navigate('/dashboard');
+    } catch (err) {
+      console.error('Login failed:', err);
+      setError(err.message || 'Login failed. Please check your credentials.');
+    }
   };
 
   return (
@@ -47,6 +70,7 @@ const Login = () => {
             Log In
           </button>
         </form>
+        {error && <p className="error-message">{error}</p>} {/* Display error message */}
         <p className="auth-link">
           Don't have an account? <span onClick={() => navigate('/register')}>Register now</span>
         </p>
